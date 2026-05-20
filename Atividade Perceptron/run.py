@@ -75,5 +75,5 @@ if __name__ == "__main__":
         print(f"| {etapa['ciclo']:^5} | {str(etapa['exemplo']):^15} | {etapa['esperado']:^8} | {etapa['soma']:^6} | {etapa['pred']:^7} | {etapa['erro']:^6} | {str(etapa['pesos']):^17} |")
     
     print("="*85)
-    print(f"\n✅ Pesos finais após {CICLOS} ciclos: {pesos_finais}\n")
+    print(f"\nPesos finais após {CICLOS} ciclos: {pesos_finais}")
 
