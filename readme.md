@@ -1,0 +1,2 @@
+# Atividades da disciplina de IA
+Neste Github constam as atividades apresentadas na disciplina de IA cursada no semestre 2026.1 na UFRPE campus UABJ ministrada pelo professor Anderson Pinheiro Cavalcanti
