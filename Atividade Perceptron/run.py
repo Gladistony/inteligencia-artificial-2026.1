@@ -14,7 +14,7 @@ X_TREINO = [
 Y_TREINO = [0, 0, 1, 1]  
 PESOS_INICIAIS = [0.0, 0.0, 0.0]
 TAXA_APRENDIZADO = 0.1
-CICLOS = 3
+CICLOS = 2
 CASAS_DECIMAIS = 2
 # =========================================================
 def funcao_de_ativacao(x):
@@ -75,6 +75,13 @@ if __name__ == "__main__":
             
         print(f"| {etapa['ciclo']:^5} | {str(etapa['exemplo']):^15} | {etapa['esperado']:^8} | {etapa['soma']:^6} | {etapa['pred']:^7} | {etapa['erro']:^6} | {str(etapa['pesos']):^17} |")
     
+    # selecionar todos os erros do ultimo ciclo
+    erros_ultimo_ciclo = [etapa['erro'] for etapa in historico if etapa['ciclo'] == CICLOS]
+    sucesso = all(erro == 0 for erro in erros_ultimo_ciclo)
+    
     print("="*85)
     print(f"\nPesos finais após {CICLOS} ciclos: {pesos_finais}")
-
+    if sucesso:
+        print("O perceptron convergiu com sucesso!")
+    else:
+        print("O perceptron não convergiu completamente, mas os pesos foram atualizados.")
