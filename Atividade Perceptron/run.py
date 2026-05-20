@@ -14,7 +14,8 @@ X_TREINO = [
 Y_TREINO = [0, 0, 1, 1]  
 PESOS_INICIAIS = [0.0, 0.0, 0.0]
 TAXA_APRENDIZADO = 0.1
-CICLOS = 2
+CICLOS = 3
+CASAS_DECIMAIS = 2
 # =========================================================
 def funcao_de_ativacao(x):
     return 1 if x >= 0 else 0
@@ -39,13 +40,13 @@ def metodo_perceptron(X, Y, w, alpha, ciclos):
             
             if erro != 0:
                 for j in range(len(w_atual)):
-                    w_atual[j] = round(w_atual[j] + alpha * erro * x[j], 2)
+                    w_atual[j] = round(w_atual[j] + alpha * erro * x[j], CASAS_DECIMAIS)
             
             historico.append({
                 'ciclo': ciclo,
                 'exemplo': x,
                 'esperado': y_esperado,
-                'soma': round(soma, 2),
+                'soma': round(soma, CASAS_DECIMAIS),
                 'pred': y_pred,
                 'erro': erro,
                 'pesos': w_atual.copy()
